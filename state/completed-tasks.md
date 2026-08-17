@@ -23,3 +23,15 @@
   and every reference total. No loader, analytics or API code was added.
   Verification is performed by the orchestrator; not asserted here as
   passing.
+
+- **2026-08-17 — TASK-0004**: Added the retrieval seam
+  `src/devsecops_ai/retrieval/` — the `@runtime_checkable` `CostRepository`
+  protocol (`base.py`) and its first implementation, `SampleCostRepository`
+  (`sample.py`), an in-memory loader that eagerly parses the `sample-data/`
+  CSV fixtures into the canonical domain models via `from_csv_dir`, with an
+  inclusive optional date range on `list_cost_records`, deterministic
+  ordering, duplicate-key and malformed-row rejection as `SampleDataError`,
+  and deliberate non-enforcement of referential integrity across files.
+  Added `tests/test_retrieval_sample.py`; updated `docs/architecture.md`.
+  No analytics, API, configuration or Azure code was added. Verification is
+  performed by the orchestrator; not asserted here as passing.
