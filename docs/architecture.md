@@ -34,8 +34,21 @@ Step 1 complete: project skeleton, FastAPI app factory, and a single
 
 Step 2 complete: the canonical cost domain model exists
 (`src/devsecops_ai/domain/cost.py`) — `Subscription`, `Resource` and
-`CostRecord`, all frozen and provider-neutral. No sample data, analytics, API
-surface beyond `/health`, or AI integration exists yet.
+`CostRecord`, all frozen and provider-neutral.
+
+Step 3 complete: hand-verifiable cost fixtures exist under `sample-data/`
+(`subscriptions.csv`, `resources.csv`, `costs.csv`) — 2 subscriptions, 8
+resources, 21 days (2026-07-27 … 2026-08-16), 168 cost rows, one strong and
+one moderate planted cost increase, six stable resources. `sample-data/
+README.md` is the answer key: it documents every planted situation and the
+reference totals a reviewer can check by hand. These are the *fixtures* of
+charter §15/Step 3, deliberately small and hand-verifiable — not the large
+seeded estate of Step 9, which unit tests must never depend on. No loader
+exists yet: `tests/test_sample_data.py` reads and validates the CSVs directly
+via the stdlib `csv` module to prove the fixtures are internally consistent
+and validate cleanly into the domain models; ingestion as a reusable
+repository/service is Step 4. No analytics, API surface beyond `/health`, or
+AI integration exists yet.
 
 ### Cost domain model rules
 

@@ -1,0 +1,9 @@
+resource_id,name,resource_type,subscription_id,environment,tag_owner,tag_cost_center
+prod-sql-01,prod-sql-01,sql-database,sub-prod-001,production,team-payments,CC-1001
+prod-vm-web-01,prod-vm-web-01,virtual-machine,sub-prod-001,production,team-payments,CC-1001
+prod-vm-web-02,prod-vm-web-02,virtual-machine,sub-prod-001,production,team-payments,CC-1001
+prod-storage-01,prod-storage-01,storage-account,sub-prod-001,production,team-platform,CC-1002
+prod-appgw-01,prod-appgw-01,application-gateway,sub-prod-001,production,team-platform,CC-1002
+dev-vm-build-01,dev-vm-build-01,virtual-machine,sub-nonprod-001,development,team-devex,CC-2001
+test-sql-01,test-sql-01,sql-database,sub-nonprod-001,test,team-devex,CC-2001
+dev-storage-01,dev-storage-01,storage-account,sub-nonprod-001,development,team-devex,CC-2001
