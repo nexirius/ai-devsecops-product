@@ -30,5 +30,17 @@ added.
 ## Current state
 
 Step 1 complete: project skeleton, FastAPI app factory, and a single
-`GET /health` endpoint exist. No domain model, sample data, analytics, API
+`GET /health` endpoint exist.
+
+Step 2 complete: the canonical cost domain model exists
+(`src/devsecops_ai/domain/cost.py`) — `Subscription`, `Resource` and
+`CostRecord`, all frozen and provider-neutral. No sample data, analytics, API
 surface beyond `/health`, or AI integration exists yet.
+
+### Cost domain model rules
+
+- `CostRecord.cost` is `Decimal`, never `float`: `float` and `bool` inputs are
+  rejected so cost sums and percentage comparisons stay exact, per §10.
+- `Resource.environment` and `Resource.tags` are stored verbatim — no case
+  folding, trimming or defaulting — because tag hygiene problems are
+  themselves a future product finding, not something the domain repairs.

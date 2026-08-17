@@ -1,13 +1,15 @@
 # Current task
 
-**TASK_ID:** TASK-001
+**TASK_ID:** TASK-0002
 
-**TITLE:** Initialize the Python project skeleton with a verifiable FastAPI health endpoint
+**TITLE:** Canonical cost domain model (`Subscription`, `Resource`,
+`CostRecord`) with strict, deterministic validation
 
-**SCOPE:** Create the minimal `src`-layout Python 3.13 / FastAPI / Pydantic / pytest
-project (charter Step 1), including a single `GET /health` endpoint and its
-tests, plus supporting docs, ADR-001, and state files. No domain model,
-sample data, analytics, Claude adapter, or UI code.
+**SCOPE:** Add the provider-neutral Pydantic domain models in
+`src/devsecops_ai/domain/` (charter Step 2, §8) that later sample-data
+ingestion, analytics, the API surface and the evidence model build on, plus
+unit tests pinning their validation behaviour, and ADR-002. No parsing, no
+I/O, no analytics, no API changes.
 
 **STATUS:** Implementation complete for this run. Verification (dependency
 resolution via `uv` and `pytest`) is performed by the Python orchestrator
